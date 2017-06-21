@@ -15,7 +15,7 @@ public class Exer02_17
     public static void main(String[] args)
     {
         int n1, n2, n3, soma, produto;
-        double media = 0.0;
+        double media;
         
         Scanner input = new Scanner(System.in);
         
