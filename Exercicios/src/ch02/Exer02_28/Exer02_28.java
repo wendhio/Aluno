@@ -23,13 +23,22 @@
  * System.out.printf. Você aprenderá mais sobre números de pontos flutuantes no
  * Capítulo 3.
  */
-
 package ch02.Exer02_28;
 
-public class Exer02_28
-{
-	public static void main(String[] args)
-	{
-		
-	}
+import java.util.Scanner;
+
+public class Exer02_28 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int raio;
+
+        System.out.println("Digite o Raio: ");
+        raio = input.nextInt();
+
+        System.out.printf("Diâmetro = %d\nCircunferência = %.2f\nÁrea = %.2f\n", 
+                2 * raio, 2 * Math.PI, Math.pow(Math.PI, 2));
+
+    }
 }
