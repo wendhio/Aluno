@@ -7,10 +7,33 @@
 
 package ch02.Exer02_30;
 
+import java.util.Scanner;
+
 public class Exer02_30
 {
-	public static void main(String[] args)
-	{
-		
-	}
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        int number;
+        
+        System.out.println("Digite o número 5 digitos: ");
+        number = input.nextInt();
+        
+        System.out.print((number / 10000) % 10 + "   ");
+        System.out.print((number / 1000) % 10 + "   ");
+        System.out.print((number / 100) % 10 + "   ");
+        System.out.print((number / 10) % 10 + "   ");
+        System.out.print(number % 10 + "   ");
+        
+        System.out.println();
+          
+        System.out.print(number % 10 + "   ");
+        System.out.print((number / 10) % 10 + "   ");
+        System.out.print((number / 100) % 10 + "   ");
+        System.out.print((number / 1000) % 10 + "   ");
+        System.out.print((number / 10000) % 10 + "   ");
+        
+        
+    }
 }
