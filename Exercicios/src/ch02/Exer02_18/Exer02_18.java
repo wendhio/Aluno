@@ -11,7 +11,6 @@
  *			*       *   *     *    *      * *
  *			*********     ***      *       *
  */
-
 package ch02.Exer02_18;
 
 public class Exer02_18
