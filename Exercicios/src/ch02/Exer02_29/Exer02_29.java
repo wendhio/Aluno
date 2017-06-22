@@ -1,5 +1,5 @@
 /*
- * 		Eis outra prévia do que virá futuramente. Neste capítulo, você aprendeu
+ *  Eis outra prévia do que virá futuramente. Neste capítulo, você aprendeu
  * sobre inteiros e o tipo int. O Java também pode representar letras
  * maiúsculas, minúsculas e uma variedade considerável de símbolos especiais.
  * Cada caractere tem uma representação correspondente de inteiro. O conjunto de
@@ -29,8 +29,21 @@ package ch02.Exer02_29;
 
 public class Exer02_29
 {
-	public static void main(String[] args)
-	{
-		
-	}
+    public static void main(String[] args) 
+    {
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", 'A', (int)'A');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", 'B', (int)'B');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", 'C', (int)'C');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", 'a', (int)'a');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", 'b', (int)'b');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", 'c', (int)'c');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", '0', (int)'0');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", '1', (int)'1');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", '2', (int)'2');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", '$', (int)'$');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", '*', (int)'*');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", '+', (int)'+');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", '/', (int)'/');
+        System.out.printf("O caractere %c na tabela ASCII é %d \n", ' ', (int)' ');
+    }
 }
