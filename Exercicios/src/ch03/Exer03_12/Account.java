@@ -8,7 +8,26 @@
 
 package ch03.Exer03_12;
 
-public class Account 
-{
-	
+public class Account{
+    private double balance; // variável de instância que armazena o saldo.
+    
+    public Account( double initialBalance ){
+        if ( initialBalance > 0.0 )
+            balance = initialBalance;
+    }
+    
+    public void debit( double debito ){
+        if ( balance - debito >= 0.0)
+            balance -= debito;
+        else
+            System.out.println("Quantia de débito excedeu o saldo da conta");
+    }
+    
+    public void credit( double amount ){
+        balance += amount;
+    }
+    
+    public double getBalance(){
+        return balance;
+    }
 }
