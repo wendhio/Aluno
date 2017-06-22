@@ -15,7 +15,36 @@
 
 package ch03.Exer03_11;
 
-public class GradeBook
+public class GradeBook 
 {
+    private String courseName;
+    private String instrutor;
 
+    public GradeBook(String name, String nome) {
+        courseName = name;
+        instrutor = nome;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String name) {
+        courseName = name;
+    }
+
+    public void setInstrutor(String nome) {
+        instrutor = nome;
+    }
+
+    public String getInstrutor() {
+        return instrutor;
+    }
+
+    public void displayMessage() {
+        System.out.printf("Welcome to the GradeBook for\n%s!\n", getCourseName());
+        System.out.printf("This course is presented by:\n%s!\n", getInstrutor());
+    }
+   
+   
 }
