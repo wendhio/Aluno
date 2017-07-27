@@ -17,7 +17,7 @@ public class Aluno {
 
     @Override // metódo de impressão.
     public String toString() {
-        return "Matricula: " +this.matricula+ "\t\tNome: " +this.nome+ "\t\tCurso: " +this.curso; 
+        return "Matricula: " +this.matricula+ "\t\t\t\tNome: " +this.nome+ "\t\t\t\ttCurso: " +this.curso; 
     }
     
     public void setMatricula( String matricula ){
