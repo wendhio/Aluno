@@ -5,17 +5,19 @@ public class Aluno {
     private String nome;
     private String curso;
     
-    // construtor
     public Aluno (String mat, String name, String course){
-       // super();
         setMatricula(mat);
         setNome(name);
         setCurso(course);
     }
+    
+    public Aluno(){
+        
+    }
 
     @Override // metódo de impressão.
     public String toString() {
-        return "Matricula: " +this.matricula+ "\tNome: " +this.nome+ "\tCurso: " +this.curso; 
+        return "Matricula: " +this.matricula+ "\t\tNome: " +this.nome+ "\t\tCurso: " +this.curso; 
     }
     
     public void setMatricula( String matricula ){

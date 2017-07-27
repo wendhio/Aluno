@@ -4,16 +4,14 @@ package wendhio1;
 //@Matricula: 201600017249
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Main {
     
     static ArrayList<Aluno> alunos = new ArrayList<>();
-   
-    
+    static String[][] matriz = new String [alunos.size()][3];   
+             
     public static void main(String[] args) {
       
         boolean stop = true; // condição de parada.
@@ -26,65 +24,93 @@ public class Main {
             System.out.println("0 - Sair\n1 - Instanciar\n2 - Criar\n3 - Imprimir\n"
                                 +"4 - Alterar\n5 - Excluir");
             
-            int opcao, tam = 0; 
+            int opcao; 
             opcao = input.nextInt();
             switch(opcao){
                 case 0: stop = false;
                     break;
                 case 1:  instanciar();
                     break;
-                case 2: matriz();
-                    
+                case 2: criarMatriz();     
                     break;
                 case 3: imprimir();
+                    //verSalvos();
                     break;
                 case 4: alterar();
                     break;
-                case 5:
-                    
+                case 5: excluir();    
                     break;
                 default:
-                    System.out.println("Entrada Inválida\t Digite novamente");
-                       
+                    System.err.println("Entrada Inválida!\nDigite novamente!");    
             }
         }while(stop);
     }
      
     public static void instanciar(){
-        Scanner input = new Scanner(System.in);
         
-        System.out.println("matricula:");
+        Scanner input = new Scanner( System.in );
+        
+        System.out.println("Matricula: ");
         String mat = input.nextLine();
-        System.out.println("nome:");
-        String nome = input.nextLine();
-        System.out.println("curso");
-        String curso = input.nextLine();
-        Aluno x = new Aluno(mat, nome, curso);
-        alunos.add(x);   
+        boolean flag = busca(mat);
+        if (!flag){
+            System.out.println("Nome: ");
+            String nome = input.nextLine();
+            System.out.println("Curso: ");
+            String curso = input.nextLine();
+            Aluno x = new Aluno(mat, nome, curso);
+            alunos.add(x);
+            System.out.println("Aluno Cadastrado!");
+        }else{
+            System.err.println("Aluno já existente!\nTente Novamente!");
+        }
     }
     
-    public static void matriz(){
+    private static void criarMatriz(){
         
-        String[][] matriz = new String [alunos.size()][3];
+        matriz = new String[alunos.size()][3];
         
-        for( int i = 0; i < alunos.size(); i++){
-            matriz[i][0] = alunos.get(i).getNome();
-            matriz[i][1] = alunos.get(i).getMatricula();
-            matriz[i][2] = alunos.get(i).getCurso();
-        }
-        
-        int cont = 0;
-        for (int i = 0; i < alunos.size(); i++) {
-            System.out.printf("\n%d\t", (cont++));
-            for (int j = 0; j < 3; j++) {
-                System.out.printf("%s\t", matriz[i][j]);
+        if( !alunos.isEmpty()){
+            for( int i = 0; i < alunos.size(); i++){
+                matriz[i][0] = alunos.get(i).getMatricula();
+                matriz[i][1] = alunos.get(i).getNome();
+                matriz[i][2] = alunos.get(i).getCurso();
+                System.out.println("Matriz Criada!");
             }
-            
+        }else{
+            System.err.println("Matriz Vazia!");
+            System.out.println("É necessário instanciar para poder criar a Matriz"
+                                + "\nEscolha a opção 1 - Instanciar");
         }
+    }
+    
+    public static boolean busca( String str){
+        
+        if ( alunos.size() > 0){
+            for (int i = 0; i < alunos.size(); i++) {
+                if (str.equalsIgnoreCase(alunos.get(i).getMatricula())) {
+                    return true;
+                }
+            }
+        }
+            return false;
     }
     
     public static void imprimir(){
-        System.out.println("\t\t\t LISTA \t\t\t");
+        
+        if(!alunos.isEmpty()){
+            System.out.println("\t\t\t LISTA DE ALUNOS \t\t\t");
+            for (int i = 0; i < alunos.size(); i++) {
+                    System.out.print("Matricula: " +matriz[i][0]+ "\t");
+                    System.out.print("Nome: " +matriz[i][1]+"\t");
+                    System.out.println("Curso: " +matriz[i][2]);
+                }
+        }
+        System.out.println("\t\t\tFIM\t\t\t");
+    }
+    
+    public static void verSalvos(){
+        System.out.println("\t\t\t LISTA DE ALUNOS \t\t\t");
         for (Aluno i : alunos) {
             System.out.println(i);
         }
@@ -92,11 +118,46 @@ public class Main {
     }
     
     public static void alterar() {
-        ordenar();
+        
+        Scanner input = new Scanner( System.in );
+        
+        System.out.println("Digite a matricula do aluno que deseja alterar: ");
+        String aux = input.nextLine();
+        // Faltando validar todas as entradas...
+        
+        /*
+        
+        for ( int i = 0; i < alunos.size(); i++){
+            if(comp){
+                alunos.remove(i);
+                //JOptionPane.showMessageDialog( null, "excluido!");
+                System.out.println("excluido");
+            } else 
+                JOptionPane.showMessageDialog( null, "Inexistente!");
+                System.out.println("");
+        } */  
     }
     
-    public static void ordenar(){
-        //Collections.sort(alunos); ???
+    public  static void excluir(){
+        // Erro ao excluir: duplicado e o errado...
+        Scanner input = new Scanner( System.in);
         
+        System.out.println("Digite a matricula do aluno que deseja excluir: ");
+        String aux = input.nextLine();
+        
+        boolean comp = busca(aux);
+        
+        for ( int i = 0; i < alunos.size(); i++){
+            if(comp){
+                alunos.remove(i);
+                //JOptionPane.showMessageDialog( null, "excluido!");
+                System.out.println("Excluído");
+            } else {
+                //JOptionPane.showMessageDialog( null, "Inexistente!");
+                System.err.println("Matricula inexistente!");
+            }
+        }
     }
+    
+    
 }
