@@ -10,12 +10,8 @@ public class Aluno {
         setNome(name);
         setCurso(course);
     }
-    
-    public Aluno(){
-        
-    }
 
-    @Override // metódo de impressão.
+    @Override
     public String toString() {
         return "Matricula: " +this.matricula+ "\t\t\t\tNome: " +this.nome+ "\t\t\t\ttCurso: " +this.curso; 
     }
@@ -37,5 +33,4 @@ public class Aluno {
     }
     
     String getCurso(){ return curso; }
-    
 }
