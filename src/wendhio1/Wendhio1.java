@@ -128,7 +128,7 @@ public class Wendhio1 {
         
         System.out.println("\t\t\t -> LISTA DE ALUNOS <- \t\t\t");
         for(int i = 0; i < matriz.length; i++){
-            System.out.printf("Matricula: %-10s ", matriz[i][0]);
+            System.out.printf("Matricula: %-12s ", matriz[i][0]);
             System.out.printf("\tNome: %-40s", matriz[i][1]);
             System.out.println("\tCurso: " + matriz[i][2]);
         } 
