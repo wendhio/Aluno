@@ -97,7 +97,7 @@ public class Wendhio1 {
         }
         return false;
     }
-    //Métdo busca aluno
+    //Método busca aluno
     public static Aluno buscaAluno( String str){
         
         if ( alunos.size() > 0){
