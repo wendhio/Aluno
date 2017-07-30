@@ -13,7 +13,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Matricula: " +this.matricula+ "\t\t\t\tNome: " +this.nome+ "\t\t\t\ttCurso: " +this.curso; 
+        return "Matricula: " +this.matricula+ "\t\t\t\tNome: " +this.nome+ "\t\t\t\tCurso: " +this.curso; 
     }
     
     public void setMatricula( String matricula ){
