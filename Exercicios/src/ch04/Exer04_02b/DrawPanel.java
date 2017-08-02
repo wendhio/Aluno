@@ -15,7 +15,47 @@
 
 package ch04.Exer04_02b;
 
-public class DrawPanel
-{
+import java.awt.Graphics;
+import javax.swing.JPanel;
 
+public class DrawPanel extends JPanel{
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        int somaWidth = 0;
+        int somaHeight = getWidth()/15;
+        //canto inferior esquerdo
+        for (int i = 0; i <= 15; i++) {
+            g.drawLine(0, somaHeight, somaWidth, getHeight());
+            somaWidth += getWidth() / 15;
+            somaHeight += getHeight() / 15;
+        }
+        //Canto inferior direito
+        somaHeight = getHeight() - getHeight() / 15;
+        somaWidth = 0;
+        for (int i = 0; i <= 15; i++) {
+            g.drawLine(somaWidth, getHeight(), getWidth(), somaHeight);
+            somaWidth += getWidth() / 15;
+            somaHeight -= getHeight() / 15;
+        }
+
+        //Canto superior direito
+        somaHeight = getHeight();
+        somaWidth = getWidth();
+        for (int i = 0; i <= 15; i++) {
+            g.drawLine(getWidth(), somaHeight, somaWidth, 0);
+            somaHeight -= getHeight() / 15;
+            somaWidth -= getWidth() / 15;
+        }
+
+        //Canto superior esquerdo
+        somaHeight = getHeight() / 15;
+        somaWidth = getWidth();
+        for (int i = 0; i <= 15; i++) {
+            g.drawLine(somaWidth, 0, 0, somaHeight);
+            somaHeight += getHeight() / 15;
+            somaWidth -= getWidth() / 15;
+        }
+
+    }
 }
