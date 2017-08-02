@@ -20,7 +20,32 @@
 
 package ch04.Exer04_01a;
 
-public class DrawPanel
-{
+import java.awt.Graphics;
+import javax.swing.JPanel;
 
+public class DrawPanel extends JPanel{
+    
+    public void paintComponent( Graphics g){
+        super.paintComponent(g);
+        
+        int width = getWidth()/2;
+        int height = getHeight()/2;
+        
+        g.drawLine(0, 0, width, height);
+        
+        for( int i = 0; i < 7; i++){
+            width += getWidth()/15;
+            height -= getHeight()/15;
+            g.drawLine(0, 0, width, height);
+        }
+        
+        width = getWidth()/2;
+        height = getHeight()/2;
+        
+        for( int i = 0; i < 7; i++){
+            width -= getWidth()/15;
+            height += getHeight()/15;
+            g.drawLine(0, 0, width, height);
+        }   
+    }
 }
