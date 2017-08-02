@@ -25,7 +25,7 @@ public class Wendhio1 {
             
             System.out.println("\n\t\t -> MENU <- \t\t");
             System.out.println("Escolha um número abaixo:");
-            System.out.println("0 -> Sair\n1 -> Instanciar\n2 -> Criar\n"
+            System.out.println("0 -> Sair\n1 -> Instanciar\n2 -> Criar Matriz\n"
                                 +"3 -> Imprimir\n4 -> Alterar\n5 -> Excluir");
             int opcao; 
             opcao = input.nextInt();
@@ -49,7 +49,7 @@ public class Wendhio1 {
         }while(stop);
     }
     //Método Cadastra Aluno. 
-    protected static void instanciar(){
+    public static void instanciar(){
         
         Scanner input = new Scanner(System.in);
         
@@ -69,7 +69,7 @@ public class Wendhio1 {
         }
     }
     //Método crias Matriz{n][3]
-    protected static void criarMatriz(){
+    public static void criarMatriz(){
         
         matriz = new String[alunos.size()][3];
         
@@ -86,7 +86,7 @@ public class Wendhio1 {
         }
     }
     //Método busca matricula dos alunos
-    protected static boolean buscaMat( String str){
+    public static boolean buscaMat( String str){
         
         if( alunos.size() > 0){
             for (int i = 0; i < alunos.size(); i++) {
@@ -97,8 +97,8 @@ public class Wendhio1 {
         }
         return false;
     }
-    //Métdo busca aluno
-    protected static Aluno buscaAluno( String str){
+    //Método busca aluno
+    public static Aluno buscaAluno( String str){
         
         if ( alunos.size() > 0){
             for (int i = 0; i < alunos.size(); i++) {
@@ -121,21 +121,21 @@ public class Wendhio1 {
         return null;
     }
     //Imprimi a matriz
-    protected static void imprimir(){
+    public static void imprimir(){
         
         criarMatriz();
         System.out.println("");
         
         System.out.println("\t\t\t -> LISTA DE ALUNOS <- \t\t\t");
         for(int i = 0; i < matriz.length; i++){
-            System.out.printf("Matricula: %10s ", matriz[i][0]);
-            System.out.printf("\tNome: %40s", matriz[i][1]);
+            System.out.printf("Matricula: %-12s ", matriz[i][0]);
+            System.out.printf("\tNome: %-40s", matriz[i][1]);
             System.out.println("\tCurso: " + matriz[i][2]);
         } 
         System.out.println("\t\t\t  -> FIM <- \t\t\t");
     }
     //Imprimi alunos salvos no arrayList        
-    protected static void verSalvos(){
+    public static void verSalvos(){
         System.out.println("\t\t\t -> LISTA DE ALUNOS <- \t\t\t");
         for (Aluno i : alunos) {
             System.out.println(i);
@@ -143,7 +143,7 @@ public class Wendhio1 {
         System.out.println("\t\t\t -> FIM <- \t\t\t");
     }
     //Método que altera o Nome e curso do aluno.
-    protected static void alterar() {
+    public static void alterar() {
         
         Scanner input = new Scanner( System.in );
         
@@ -192,7 +192,7 @@ public class Wendhio1 {
         }
     }
     //Método Exclui o objeto aluno de uma posição.
-    protected  static void excluir(){
+    public static void excluir(){
         
         Scanner input = new Scanner( System.in);
         
