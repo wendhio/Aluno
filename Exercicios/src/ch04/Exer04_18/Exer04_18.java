@@ -17,9 +17,30 @@
 
 package ch04.Exer04_18;
 
+import java.util.Scanner;
+
 public class Exer04_18 {
-	public static void main(String args[])
-	{
-		
-	}
+    public static void main(String args[]) {
+        
+        Scanner scan = new Scanner( System.in);
+        
+        System.out.println("Digite o numero de sua conta:");
+        int number = scan.nextInt();
+        
+        System.out.println("Digite o saldo no inicio do mês:");
+        int saldo = scan.nextInt();
+        
+        System.out.println("Digite o total de todos os itens cobrados desse cliente no mês");
+        int compra = scan.nextInt();
+        
+        System.out.println("Digite o total de credito aplicado no mês");
+        int credito = scan.nextInt();
+        
+        System.out.println("Digite o limite de credito:");
+        int limite = scan.nextInt();
+        
+        Conta cartao = new Conta(number, saldo, compra, credito, limite);
+        
+        cartao.novoSaldo();
+    }
 }
