@@ -7,13 +7,47 @@
  * cada empregado e então determinar e exibir o salário bruto do empregado. Utilize a classe
  * Scanner para inserir os dados.
  */
-
 package ch04.Exer04_20;
 
-public class Exer04_20
-{
-	public static void main(String[] args)
-	{
-		
-	}
+import java.util.Scanner;
+
+public class Exer04_20{
+    public static void main(String[] args){
+	
+        Scanner scan = new Scanner( System.in);
+        double[] empregado = new double[3];
+        double[] salario = new double[3];
+        int[] horas = new int[3];
+        
+        for( int i = 0; i < 3; i++){
+            System.out.println("Empregado " +(i+1));
+            System.out.println("Horas trabalhadas?");
+            horas[i] = scan.nextInt();
+            System.out.println("Sálario-Hora?");
+            salario[i] = scan.nextDouble();
+        }
+        
+        for( int i = 0; i < 3; i++){
+            if( horas[i] <= 40){
+                empregado[i] = salario[i]*horas[i]; 
+            }else{
+                empregado[i] = salario[i]*40;
+                empregado[i] += (horas[i]-40)*(1.5*salario[i]);
+                System.out.println("hora extra");
+            }
+        }
+        
+        for( int i = 0; i < 3; i++){
+            System.out.println("Empregado "+(1+i));
+            System.out.println("Salário-hora: " + salario[i]);
+            System.out.println("Horas trabalhadas: " + horas[i]);
+            System.out.println("Salário Final: " + empregado[i]);
+        }
+        
+        
+        
+        
+        
+        
+    }
 }
