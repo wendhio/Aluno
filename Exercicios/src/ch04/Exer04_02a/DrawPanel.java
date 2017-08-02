@@ -12,10 +12,25 @@
  * b) Modifique sua resposta na parte (a) para espelhar o projeto em todos os quatro cantos,
  * como mostrado na captura de tela direita da Figura 4.22.
  */
-
 package ch04.Exer04_02a;
 
-public class DrawPanel
-{
+import javax.swing.JFrame;
+import java.awt.Graphics;
+import javax.swing.JPanel;
 
+
+public class DrawPanel extends JPanel{
+    // chama paintComponent para assegurar que o painel é exibido corretamente
+    public void paintComponent(Graphics g){
+        super.paintComponent( g );
+
+        int somaWidth = 0;
+        int somaHeight = 0;
+
+        for (int i = 0; i <= 15; i++){
+            somaWidth += getWidth()/15;
+            g.drawLine( 0, somaHeight, somaWidth, getHeight() );
+            somaHeight += getHeight()/15;
+        }
+    }
 }
